@@ -430,8 +430,10 @@ export class WorkflowClient extends DifyClient {
               const { data } = task_id ? await this.result(task_id) : { data: { outputs: '' } }
               console.log('获取工作流执行结果', task_id, JSON.stringify(data.outputs))
               let outputs = {}
+              console.log("开始判断·······················")
               if(data.outputs) {
                   try {
+                    console.log("进入判断·······················")
                     outputs = JSON.parse(data.outputs)
                     let temp = eval("'" + JSON.stringify(data.outputs) + "'")
                     console.log("工作流数据赋值成功",temp)
