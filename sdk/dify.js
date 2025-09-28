@@ -433,6 +433,8 @@ export class WorkflowClient extends DifyClient {
               if(data.outputs) {
                   try {
                     outputs = JSON.parse(data.outputs)
+                    let temp = eval("'" + JSON.stringify(data.outputs) + "'")
+                    console.log("工作流数据赋值成功",temp)
                   } catch (error) {
                     console.log(`获取工作流执行结果,失败:${error}`)
                   }
