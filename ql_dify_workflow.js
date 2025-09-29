@@ -70,7 +70,7 @@ class WorkflowTask extends Task {
     console.log(`Dify工作流【${info.data.name}】开始执行...`);
     const response = await workflow.getWorkflowResult(inputs, user, true);
     this.result = response.text || "";
-    console.log(this.result);
+    console.log("判断结果是否出来：",this.result);
   }
 
   toString() {
