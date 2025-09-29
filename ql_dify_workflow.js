@@ -97,6 +97,7 @@ class WorkflowTask extends Task {
   }
 
   const message = messageList.join(`\n${"-".repeat(15)}\n`);
+  console.log("message信息是",message);
   await notify.sendNotify("Dify定时工作流", message);
 })()
   .catch((e) => {
